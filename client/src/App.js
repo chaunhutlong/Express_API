@@ -4,7 +4,7 @@ import BookList from "./pages/bookList";
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <Routes>
         <Route path="/" element={<BookList />} />
       </Routes>

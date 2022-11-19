@@ -1,0 +1,79 @@
+.modal {
+  position: fixed;
+  inset: 0; /* inset sets all 4 values (top right bottom left) much like how we set padding, margin etc., */
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+  z-index: 999;
+
+  padding: 40px 20px 20px;
+}
+
+.modal-content {
+  border-radius: 8px;
+  max-width: 550px;
+  width: 100%;
+  background-color: #fff;
+  color: #000;
+  font-size: 2rem;
+  position: relative;
+}
+.close-btn {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  font-size: 1rem;
+}
+
+.input {
+  display: flex;
+  flex-direction: column-reverse;
+  position: relative;
+  padding-top: 1.5rem;
+}
+
+.input-label {
+  color: #8597a3;
+  position: absolute;
+  top: 1.5rem;
+  transition: 0.25s ease;
+  font-size: 16px;
+}
+
+.input-field {
+  border: 0;
+  z-index: 1;
+  background-color: transparent;
+  border-bottom: 2px solid #eee;
+  font: inherit;
+  font-size: 16px;
+  padding: 0.25rem 0;
+}
+.input-field:focus,
+.input-field:valid {
+  outline: 0;
+  border-bottom-color: #6658d3;
+}
+.input-field:focus + .input-label,
+.input-field:valid + .input-label {
+  color: #6658d3;
+  transform: translateY(-1.25rem);
+}
+.action-button {
+  font: inherit;
+  font-size: 16px;
+  padding: 0.5rem 1rem;
+  width: 100%;
+  font-weight: 500;
+  background-color: #6658d3;
+  border-radius: 6px;
+  color: #fff;
+  border: 0;
+}
+.action-button:focus {
+  outline: 0;
+}
