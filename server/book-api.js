@@ -109,9 +109,9 @@ app.delete("/books/:id", (req, res) => {
   if (!book) res.status(404).send("The book with the given ID was not found.");
 
   const index = books.indexOf(book);
-  books = books.splice(index, 1);
+  books.splice(index, 1);
 
-  res.send(books);
+  res.send(book);
 });
 
 // Catch 404 and forward to error handler

@@ -10,5 +10,5 @@ export const createBook = async (books) => {
   return httpRequest.post("/books", books);
 };
 export const deleteBook = async (id) => {
-  return httpRequest.put("/books/" + id);
+  return httpRequest.delete("/books/" + id);
 };
