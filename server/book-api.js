@@ -68,6 +68,10 @@ app.post("/books", (req, res) => {
     id: books.length + 1,
     title: req.body.title,
     isbn: req.body.isbn,
+    author: req.body.author,
+    publish_date: req.body.publish_date,
+    publisher: req.body.publisher,
+    numOfPages: req.body.numOfPages,
   };
   books.push(book);
   res.send(book);
@@ -92,18 +96,22 @@ app.put("/books/:id", (req, res) => {
 
   book.title = req.body.title;
   book.description = req.body.description;
+  book.author = req.body.author;
+  book.publish_date = req.body.publish_date;
+  book.publisher = req.body.publisher;
+  book.numOfPages = req.body.numOfPages;
   res.send(book);
 });
 
 // DELETE a book
 app.delete("/books/:id", (req, res) => {
-  const book = books.find((c) => c.id === parseInt(req.params.id));
+  let book = books.find((c) => c.id === parseInt(req.params.id));
   if (!book) res.status(404).send("The book with the given ID was not found.");
 
   const index = books.indexOf(book);
-  books.splice(index, 1);
+  books = books.splice(index, 1);
 
-  res.send(book);
+  res.send(books);
 });
 
 // Catch 404 and forward to error handler
